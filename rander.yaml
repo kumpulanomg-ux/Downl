@@ -1,15 +1,6 @@
 services:
-  # ====== Static Website (index.html) ======
   - type: web
-    name: Quran
-    env: static
-    buildCommand: ""
-    staticPublishPath: .
-    plan: free
-
-  # ====== Bot + Flask ======
-  - type: web
-    name: Quran
+    name: down
     env: python
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python3 web.py & python3 main.py"
