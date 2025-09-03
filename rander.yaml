@@ -9,7 +9,7 @@ services:
 
   # ====== Bot + Flask ======
   - type: web
-    name: telegram-gift-bot
+    name: Quran
     env: python
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python3 web.py & python3 main.py"
