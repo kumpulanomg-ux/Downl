@@ -1,0 +1,16 @@
+services:
+  # ====== Static Website (index.html) ======
+  - type: web
+    name: telegram-gift-site
+    env: static
+    buildCommand: ""
+    staticPublishPath: .
+    plan: free
+
+  # ====== Python Bot ======
+  - type: web
+    name: telegram-gift-bot
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python3 giftfraon.py"
+    plan: free
