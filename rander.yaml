@@ -1,7 +1,7 @@
 services:
   # ====== Static Website (index.html) ======
   - type: web
-    name: telegram-gift-site
+    name: Quran  
     env: static
     buildCommand: ""
     staticPublishPath: .
@@ -9,7 +9,7 @@ services:
 
   # ====== Python Bot ======
   - type: web
-    name: telegram-gift-bot
+    name: Quran
     env: python
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python3 main.py"
