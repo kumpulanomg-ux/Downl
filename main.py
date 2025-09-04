@@ -535,5 +535,17 @@ def run_bot():
             logger.error(f"Bot crashed: {e}", exc_info=True)
             time.sleep(10)
 
+from flask import Flask
+import threading
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot is running 24/7!"
+
 if __name__ == '__main__':
-    run_bot()
+    # نشغل البوت في thread منفصل
+    threading.Thread(target=run_bot).start()
+    # نشغل Flask عشان Render يفضل شايف الخدمة شغالة
+    app.run(host="0.0.0.0", port=10000)
