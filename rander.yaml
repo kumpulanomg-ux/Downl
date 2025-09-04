@@ -3,5 +3,5 @@ services:
     name: down
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "python3 web.py & python3 main.py"
+    startCommand: "python3 main.py"
     plan: free
