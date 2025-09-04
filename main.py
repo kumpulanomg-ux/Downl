@@ -542,10 +542,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Bot is running 24/7!"
+    return "Bot is running!"
 
-if __name__ == '__main__':
-    # نشغل البوت في thread منفصل
-    threading.Thread(target=run_bot).start()
-    # نشغل Flask عشان Render يفضل شايف الخدمة شغالة
+def run():
+    print("Starting bot...")
+    bot.polling(none_stop=True, interval=2, timeout=30)
+
+if __name__ == "__main__":
+    # شغل البوت في Thread
+    threading.Thread(target=run).start()
+    # خلي Flask يفضل فاتح البورت
     app.run(host="0.0.0.0", port=10000)
